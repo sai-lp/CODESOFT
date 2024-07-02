@@ -1,0 +1,35 @@
+import java.util.*;
+import java.util.Scanner;
+import java.util.Scanner;
+
+class NumberGame{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        Random rm=new Random();
+        int SecretNumber=rm.nextInt(100)+1;
+        int guess;
+        int attempts=0;
+        boolean guessed=false;
+        
+        System.out.println("Welcome to the Number Guessing Game!");
+        System.out.println("Try guessing the number between 1 to 100.");
+        
+        while(!guessed){
+            System.out.println("Enter your guess:");
+            guess=sc.nextInt();
+            attempts++;
+            
+            
+            if(guess<SecretNumber){
+                System.out.println("Two low!");
+            }
+            else if(guess>SecretNumber){
+                System.out.println("Too High!");
+            }
+            else{
+                guessed=true;
+            }
+        }
+        System.out.println("Congratulations you guessed the number."+SecretNumber+"in"+attempts+"attempts.");
+    }
+}
